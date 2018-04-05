@@ -179,11 +179,13 @@ public class Sudoku extends JFrame {
         // }
    // }
    
-    public boolean uniqueRow(int row, int num, int[][]arry) {
-     for (int col = 0; col < GRID_SIZE; ++ col) {
+    public boolean uniqueRow(int row, int num, int[][]arry) { 
+     for (int col = 0; col < GRID_SIZE; ++col) {
            if (num == arry[row][col]) {
               return false;
            }
+           if (num == 0)
+               return true;
      }
      return true;
 }
@@ -193,6 +195,8 @@ public boolean uniqueColumn(int col, int num, int[][]arry) {
           if (num == arry[row][col]) {
              return false;
           }
+          if (num == 0)
+              return true;
      }
      return true;
 }
@@ -206,6 +210,8 @@ public boolean uniqueSubP2(int row, int col, int num, int[][]arry) {
                             return false;
                     ++c;
           }
+          if (num == 0)
+              return true;
           ++r;
         }
         return true;
